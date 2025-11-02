@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>St. Joseph Preparatory School Portal</title>
+	<link
+	  rel="stylesheet"
+	  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+	/>
+<style>
+/* ================================
+   ST. JOSEPH PREPARATORY SCHOOL
+   PORTAL THEME - BLUE & GOLD
+=============================== */
+
+:root {
+  --school-blue: #0d47a1;
+  --school-gold: #f9a825;
+  --text-dark: #1c1c1c;
+  --text-light: #ffffff;
+  --background-light: #f5f7fb;
+  --card-bg: rgba(255, 255, 255, 0.9);
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+html, body { height:100%; font-family:"Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #e3f2fd, #fffde7); color: var(--text-dark); display:flex; flex-direction:column; scroll-behavior:smooth; }
+
+/* Animations */
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes slideUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+@keyframes glowPulse { 0%,100% { box-shadow:0 0 0px rgba(0,0,0,0);} 50% { box-shadow:0 0 15px rgba(249,168,37,0.5);} }
+@keyframes bounce3D { 0%,100% { transform:translateY(0) scale(1); box-shadow:0 5px 0 #0a306a; } 25% { transform:translateY(-10px) scale(1.05); box-shadow:0 12px 0 #0a306a; } 50% { transform:translateY(0) scale(1); box-shadow:0 5px 0 #0a306a; } 75% { transform:translateY(-6px) scale(1.03); box-shadow:0 8px 0 #0a306a; } }
+@keyframes slightShake { 0%,100% { transform:translateX(0); } 25% { transform:translateX(-3px); } 50% { transform:translateX(3px); } 75% { transform:translateX(-2px); } }
+
+/* Header */
+.main-header { position:fixed; top:0; left:0; width:100%; padding:20px 0; background:linear-gradient(to right, var(--school-blue), #08306b); color: var(--text-light); text-align:center; border-bottom:5px solid var(--school-gold); z-index:1000; animation:fadeIn 1s ease-in; box-shadow:0 4px 10px rgba(0,0,0,0.3); }
+.main-header h1 { font-size:2.4em; font-weight:700; letter-spacing:1px; }
+.main-header .fa-graduation-cap { color: var(--school-gold); margin-right:10px; animation: glowPulse 2.5s infinite ease-in-out; }
+
+/* Main container */
+.portal-container { display:flex; justify-content:center; align-items:flex-start; flex:1; width:100%; max-width:1600px; margin:0 auto; padding:140px 40px 100px; gap:40px; animation:fadeIn 1.2s ease-in-out; }
+
+/* Sidebar */
+.main-nav { flex:0 0 280px; background: var(--card-bg); border-radius:15px; backdrop-filter:blur(10px); box-shadow:0 8px 20px rgba(0,0,0,0.1); padding:25px; animation:slideUp 1s ease; }
+.main-nav h2 { color: var(--school-blue); border-bottom:2px solid #ddd; padding-bottom:10px; margin-bottom:20px; }
+.nav-link { display:flex; align-items:center; text-decoration:none; font-weight:600; padding:12px 14px; border-radius:10px; border:1px solid #e0e0e0; margin-bottom:12px; transition:all 0.3s ease; }
+.icon-margin { margin-right:12px; transition:transform 0.3s ease; }
+.nav-link.student { background:#f1f8e9; color:#2e7d32; border-left:5px solid var(--school-gold); }
+.nav-link.student:hover { background: var(--school-gold); color:#fff; transform:translateX(5px); }
+.nav-link.admin { background:#e3f2fd; color: var(--school-blue); border-left:5px solid var(--school-blue); }
+.nav-link.admin:hover { background: var(--school-blue); color:#fff; transform:translateX(5px); }
+
+/* Apply Teacher Section */
+.apply-teacher { border-left:5px solid var(--school-blue); text-align:center; padding:25px; cursor:pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; animation: slightShake 4s infinite ease-in-out; }
+.apply-teacher:hover { transform: scale(1.03); box-shadow:0 0 25px rgba(13,71,161,0.2); }
+.apply-now-btn { display:inline-flex; align-items:center; justify-content:center; margin-top:15px; padding:12px 28px; font-weight:700; font-size:1.05em; color:#fff; background: var(--school-blue); border-radius:10px; border:none; cursor:pointer; animation:bounce3D 3s infinite ease-in-out; box-shadow:0 6px 0 #08306b; transition:all 0.3s ease; }
+.apply-now-btn:hover { transform:scale(1.05); box-shadow:0 10px 0 #05204e; }
+
+/* Content */
+.welcome-section { flex:1; background: var(--card-bg); border-radius:15px; backdrop-filter:blur(10px); box-shadow:0 8px 25px rgba(0,0,0,0.08); padding:40px; animation:slideUp 1.2s ease; }
+.welcome-section h3 { font-size:1.9em; color: var(--school-blue); border-bottom:2px dashed #ddd; padding-bottom:10px; margin-bottom:25px; }
+.info-card { background:rgba(255,255,255,0.95); border:1px solid #eee; border-left:5px solid var(--school-gold); border-radius:10px; padding:20px 25px; margin-bottom:20px; transition:all 0.3s ease; animation:fadeIn 1.5s ease; }
+.info-card:hover { transform:translateY(-6px); box-shadow:0 10px 30px rgba(0,0,0,0.1); }
+.info-card h4 { font-size:1.25em; color: var(--school-blue); margin-bottom:8px; }
+
+/* Footer */
+.portal-footer { position:fixed; bottom:0; left:0; width:100%; background:linear-gradient(to right, var(--school-blue), #08306b); color:#f0f0f0; text-align:center; padding:15px 0; font-size:0.95em; border-top:4px solid var(--school-gold); box-shadow:0 -4px 10px rgba(0,0,0,0.3); }
+.portal-footer a { color: var(--school-gold); text-decoration:none; font-weight:600; }
+
+@media(max-width:950px) { .portal-container { flex-direction:column; padding:130px 20px 100px; } .main-nav, .welcome-section { width:100%; } }
+
+/* ================= AI SPEAKER ================= */
+#ai-speaker {
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  width:70px;
+  height:70px;
+  background: var(--school-blue);
+  color: var(--text-light);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:2em;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  animation:bounce3D 3s infinite ease-in-out;
+  z-index:2000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#ai-speaker:hover {
+  transform:scale(1.15);
+  box-shadow:0 12px 25px rgba(0,0,0,0.4);
+}
+</style>
+  </head>
+  <body>
+
+	<header class="main-header">
+	  <h1><i class="fas fa-graduation-cap"></i> St. Joseph Preparatory School Portal</h1>
+	</header>
+
+	<main class="portal-container">
+	  <nav class="main-nav">
+		<h2>School Services</h2>
+		<ul>
+		  <li><a href="registration/index.html" class="nav-link student"><i class="fas fa-user-plus icon-margin"></i> Registration (Student)</a></li>
+		  <li><a href="registration/dashboard.html" class="nav-link admin"><i class="fas fa-user-shield icon-margin"></i> Registration (Admin)</a></li>
+		  <li><a href="studentreport/index.html" class="nav-link student"><i class="fas fa-file-alt icon-margin"></i> Student Report</a></li>
+		  <li><a href="resultsdashboard/index.html" class="nav-link admin"><i class="fas fa-chart-line icon-margin"></i> Student Report (Admin)</a></li>
+		  <li><a href="registration/fees.html" class="nav-link student"><i class="fas fa-money-check-alt icon-margin"></i> School Fees</a></li>
+		  <li><a href="admin/school_fees_admin.html" class="nav-link admin"><i class="fas fa-cogs icon-margin"></i> School Fees (Admin)</a></li>
+		  <li><a href="Registration/staff.html" class="nav-link admin"><i class="fas fa-user-tie icon-margin"></i> Teachers & Headmasters</a></li>
+		  <li><a href="staff/catering.html" class="nav-link admin"><i class="fas fa-utensils icon-margin"></i> Caterers</a></li>
+		  <li><a href="registration/head.html" class="nav-link admin"><i class="fas fa-lock icon-margin"></i> ADMIN</a></li>
+		</ul>
+	  </nav>
+
+	  <section class="welcome-section">
+		<div class="info-card apply-teacher" onclick="window.location.href='registration/teacherform.html'">
+		  <h4><i class="fas fa-briefcase"></i> Apply for Teaching (Admission Available)</h4>
+		  <p>We are currently accepting new teacher applications. Join <strong>St. Joseph Preparatory School Pokukrom</strong> — where excellence begins!</p>
+		  <button class="apply-now-btn"><i class="fas fa-paper-plane"></i> Apply Now</button>
+		</div>
+
+		<h3>Welcome to the School Portal</h3>
+		<p>Access all school services and information easily using the left menu. The portal is designed for efficiency and clarity for students, teachers, and administrators alike.</p>
+
+		<div class="info-card student-info">
+		  <h4><i class="fas fa-user-graduate"></i> Student Information</h4>
+		  <p>Register students, view records, and access report cards all in one place.</p>
+		</div>
+
+		<div class="info-card teacher-info">
+		  <h4><i class="fas fa-chalkboard-teacher"></i> Teacher Records</h4>
+		  <p>Access teacher directories, subjects, and teaching schedules.</p>
+		</div>
+
+		<div class="info-card admin-info">
+		  <h4><i class="fas fa-lock"></i> Administration Access</h4>
+		  <p>Admins can manage student data, update records, and generate reports securely.</p>
+		</div>
+	  </section>
+	</main>
+
+	<footer class="portal-footer">
+	  &copy; 2025 St. Joseph Preparatory School. All rights reserved. | <a href="#">Contact Us</a>
+	</footer>
+
+	<!-- AI Speaker -->
+	<div id="ai-speaker" title="Click to hear AI message"><i class="fas fa-robot"></i></div>
+
+<script>
+// AI Voice Function
+function speakMessage(message, callback=null){
+  if('speechSynthesis' in window){
+    const utter = new SpeechSynthesisUtterance(message);
+    utter.lang='en-US';
+    utter.rate=1;
+    utter.pitch=1;
+    utter.volume=1;
+    utter.onend = callback;
+    window.speechSynthesis.cancel(); // stop any existing speech
+    window.speechSynthesis.speak(utter);
+  } else alert("Your browser does not support speech synthesis.");
+}
+
+// AI Speaker click
+document.getElementById('ai-speaker').addEventListener('click', () => {
+  // Introduction (from your <speak>)
+  const introduction = `
+Welcome to St. Joseph Preparatory School’s School Management System – a modern, efficient, and easy-to-use platform designed to simplify the daily operations of our school.
+This system brings all aspects of school administration into one convenient digital space, making life easier for teachers, administrators, and parents alike.
+Managing a school manually can be time-consuming and prone to errors. From student records and attendance to report cards and fee payments, handling everything on paper slows down processes and increases the chance of mistakes.
+That’s why we created a comprehensive digital solution tailored specifically for St. Joseph Preparatory School.
+Our School Management System offers a range of powerful features.
+Student Management – Keep accurate records of all students, including personal information, attendance, and academic performance. Students can also apply online directly through the system.
+Teacher Management – Easily track teacher details, subjects, and schedules. Teachers can apply online through the portal.
+Report Card Generation – Automatically calculate grades and generate professional report cards for each term.
+Fee Management – Simplify school fees collection and tracking, with clear records of payments for parents and administrators.
+Dashboards – Intuitive dashboards provide instant insights into students’ progress, attendance, and school finances.
+Every feature is designed with simplicity and efficiency in mind, so teachers can focus on teaching, and administrators can focus on running the school smoothly.
+With our School Management System, St. Joseph Preparatory School is embracing the future of education. It saves time, reduces errors, ensures transparency, and improves communication between teachers, students, and parents.
+In short, it’s a smarter way to manage school operations.
+Experience the convenience, accuracy, and efficiency of St. Joseph Preparatory School’s School Management System today.
+Together, we are shaping a brighter future for our students, teachers, and the entire school community.
+  `;
+
+  // Portal content
+  const portalContentElement = document.querySelector('.welcome-section');
+  let portalContent = portalContentElement ? portalContentElement.innerText : '';
+  const navLinks = document.querySelectorAll('.main-nav a');
+  navLinks.forEach(link => {
+    portalContent += ' ' + link.innerText + '.';
+  });
+
+  // Speak the introduction first, then portal content
+  speakMessage(introduction, () => {
+    speakMessage(portalContent);
+  });
+});
+</script>
+
+  </body>
+</html>
